@@ -1,32 +1,35 @@
-﻿public static class DoubleExtensions
+﻿namespace TypeExtensions
 {
-    public static double Truncate(this double value, int precision)
+    public static class DoubleExtensions
     {
-        var amount = value.ToString();
-
-        if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
+        public static double Truncate(this double value, int precision)
         {
-            return double.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
+            var amount = value.ToString();
+
+            if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
+            {
+                return double.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
+            }
+            else
+            {
+                return value;
+            }
         }
-        else
-        {
-            return value;
-        }
-    }
 
-    public static double? Truncate(this double? value, int precision)
-    {
-        if (value == null) return null;
-
-        var amount = value.ToString();
-
-        if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
+        public static double? Truncate(this double? value, int precision)
         {
-            return double.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
-        }
-        else
-        {
-            return value;
+            if (value == null) return null;
+
+            var amount = value.ToString();
+
+            if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
+            {
+                return double.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
+            }
+            else
+            {
+                return value;
+            }
         }
     }
 }

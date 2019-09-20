@@ -1,32 +1,35 @@
-﻿public static class DecimalExtensions
+﻿namespace TypeExtensions
 {
-    public static decimal Truncate(this decimal value, int precision)
+    public static class DecimalExtensions
     {
-        var amount = value.ToString();
-
-        if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
+        public static decimal Truncate(this decimal value, int precision)
         {
-            return decimal.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
+            var amount = value.ToString();
+
+            if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
+            {
+                return decimal.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
+            }
+            else
+            {
+                return value;
+            }
         }
-        else
-        {
-            return value;
-        }
-    }
 
-    public static decimal? Truncate(this decimal? value, int precision)
-    {
-        if (value == null) return null;
-
-        var amount = value.ToString();
-
-        if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
+        public static decimal? Truncate(this decimal? value, int precision)
         {
-            return decimal.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
-        }
-        else
-        {
-            return value;
+            if (value == null) return null;
+
+            var amount = value.ToString();
+
+            if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
+            {
+                return decimal.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
+            }
+            else
+            {
+                return value;
+            }
         }
     }
 }

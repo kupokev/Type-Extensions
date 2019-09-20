@@ -6,6 +6,9 @@
     <Company />
     <Copyright />
     <Description>Extended functionality for types including a Truncate(x) method for decimal and double</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>extension type truncate decimal double</PackageTags>
+    <PackageReleaseNotes>Initial release. Truncate functionality for double and decimal.</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
