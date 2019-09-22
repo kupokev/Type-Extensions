@@ -1,35 +1,23 @@
-﻿namespace TypeExtensions
+﻿using System;
+
+namespace TypeExtensions
 {
     public static class DecimalExtensions
     {
         public static decimal Truncate(this decimal value, int precision)
         {
-            var amount = value.ToString();
+            var amount = (decimal)Math.Pow(10, precision);
 
-            if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
-            {
-                return decimal.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
-            }
-            else
-            {
-                return value;
-            }
+            return Math.Truncate(value * amount) / amount;
         }
 
         public static decimal? Truncate(this decimal? value, int precision)
         {
             if (value == null) return null;
 
-            var amount = value.ToString();
+            var amount = (decimal)Math.Pow(10, precision);
 
-            if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
-            {
-                return decimal.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
-            }
-            else
-            {
-                return value;
-            }
+            return Math.Truncate((decimal)value * amount) / amount;
         }
     }
 }

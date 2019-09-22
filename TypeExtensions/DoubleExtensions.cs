@@ -1,35 +1,23 @@
-﻿namespace TypeExtensions
+﻿using System;
+
+namespace TypeExtensions
 {
     public static class DoubleExtensions
     {
         public static double Truncate(this double value, int precision)
         {
-            var amount = value.ToString();
+            var amount = Math.Pow(10, precision);
 
-            if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
-            {
-                return double.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
-            }
-            else
-            {
-                return value;
-            }
+            return Math.Truncate(value * amount) / amount;
         }
 
         public static double? Truncate(this double? value, int precision)
         {
             if (value == null) return null;
 
-            var amount = value.ToString();
+            var amount = Math.Pow(10, precision);
 
-            if (amount.Contains(".") && amount.Length - amount.IndexOf(".") > precision)
-            {
-                return double.Parse(amount.Substring(0, amount.IndexOf(".") + precision + 1));
-            }
-            else
-            {
-                return value;
-            }
+            return Math.Truncate((double)value * amount) / amount;
         }
     }
 }
