@@ -9,6 +9,9 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>extension type truncate decimal double</PackageTags>
     <PackageReleaseNotes>Initial release. Truncate functionality for double and decimal.</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/kupokev/Type-Extensions</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/kupokev/Type-Extensions</PackageProjectUrl>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
 </Project>
