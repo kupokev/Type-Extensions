@@ -7,20 +7,16 @@
     <Copyright />
     <Description>Extended functionality for types including a Truncate(x) method for decimal and double</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageTags>extension type truncate decimal double</PackageTags>
-    <PackageReleaseNotes>Initial release. Truncate functionality for double and decimal.</PackageReleaseNotes>
+    <PackageTags>extension type trunc decimal double</PackageTags>
+    <PackageReleaseNotes>v1.0.0
+Truncate functionality for double and decimal.
+
+v1.0.3
+Breaking change: Use value.Trunc(6) instead of value.Truncate(6). This change is due to an odd behavior in Visual Studio 2017.</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/kupokev/Type-Extensions</RepositoryUrl>
     <PackageProjectUrl>https://github.com/kupokev/Type-Extensions</PackageProjectUrl>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <Version>1.0.2</Version>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Version>1.0.3</Version>
+    <FileVersion>1.0.3.0</FileVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
 </Project>
