@@ -10,7 +10,7 @@ Works with the following type: decimal, decimal?, double, double?
 
 > decimal value = 123.4567890;
 > 
-> value = value.Truncate(4);
+> value = value.Trunc(4);
 >
 > Console.WriteLine(value);
 
